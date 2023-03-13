@@ -1,0 +1,11 @@
+.container {
+  background-color: black;
+  text-align: center;
+  padding: 0.25rem 0;
+}
+
+.lightContainer {
+  background-color: rgb(193, 193, 193);
+  text-align: center;
+  padding: 0.25rem 0;
+}

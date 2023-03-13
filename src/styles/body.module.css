@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+  min-height: 100vh;
+  margin: 0 5rem;
+}
+
+.flexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
