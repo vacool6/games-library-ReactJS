@@ -8,6 +8,7 @@
   text-align: start;
   color: white;
   margin: 1rem;
+  position: relative;
 }
 
 .lightContainer {
@@ -37,4 +38,12 @@
   border-radius: 50%;
   width: 100%;
   height: 100%;
+}
+
+.detelecard{
+position: absolute;
+cursor: pointer;
+right: 0;
+top: 0;
+margin: 10px;
 }

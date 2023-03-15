@@ -22,6 +22,9 @@ const Body = ({ darkMode, setIsOpen }) => {
             details={data.details}
             poster={data.poster}
             darkMode={darkMode}
+            data={data}
+            index={index}
+            
           />
         ))}
       </div>

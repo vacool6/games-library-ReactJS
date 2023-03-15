@@ -26,10 +26,14 @@ export const gamesData = [
     poster:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7ZjF_mZPIHTcMig6ZN037mlQl70g6oByzDw&usqp=CAU",
   },
-  // {
-  //   id: 5,
-  //   name: "Super Contra",
-  //   details: "This is a very old and awesome game.",
-  //   poster: "https://upload.wikimedia.org/wikipedia/en/4/4e/Super_contra.jpg",
-  // },
+
 ];
+
+
+
+function AddGame(name,image,desc){
+  gamesData.push({id:Math.random(),name:name,poster:image,details:desc})
+
+}
+
+export default AddGame;
