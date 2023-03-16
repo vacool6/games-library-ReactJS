@@ -11,12 +11,73 @@
 }
 
 .modal {
-  background-color: white;
-  width: 40rem;
-  height: 20rem;
+  background: rgb(79, 79, 80);
+  color: #f6f1f1;
+  width: 20rem;
+  height: 25rem;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+}
+h1 {
+  margin: 10px;
+}
+.add {
+  -webkit-border-radius: 23;
+  -moz-border-radius: 23;
+  border-radius: 23px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #52af82;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  transition: all 0.5s;
+  width: 7rem;
+}
+.add:hover {
+  background: #055e33;
+  scale: 1.2;
+  text-decoration: none;
+}
+.close {
+  -webkit-border-radius: 23;
+  -moz-border-radius: 23;
+  border-radius: 23px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #c75b5b;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  width: 7rem;
+  transition: all 0.5s;
+}
+
+.close:hover {
+  background: #d93434;
+  scale: 1.2;
+  text-decoration: none;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.input {
+  height: 2.5rem;
+  border-radius: 10px;
+  border: 0.2px solid;
+  padding: 5px 15px;
+  font-size: 1.5rem;
+  margin: 10px;
+  color: black;
 }

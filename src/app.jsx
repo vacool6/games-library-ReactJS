@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar";
 import Body from "./components/body";
 import Footer from "./components/footer";
-import {Popup} from "./components/popup";
+import Popup from "./components/popup";
 import { useState } from "react";
 
 const App = () => {

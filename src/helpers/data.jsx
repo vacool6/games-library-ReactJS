@@ -1,4 +1,4 @@
-export const gamesData = [
+export let gamesData = [
   {
     id: 1,
     name: "Candy crush",
@@ -26,14 +26,22 @@ export const gamesData = [
     poster:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7ZjF_mZPIHTcMig6ZN037mlQl70g6oByzDw&usqp=CAU",
   },
-
 ];
 
+let id = 4;
+function AddGame(data) {
+  gamesData.push({
+    id: ++id,
+    name: data.gameName,
+    poster: data.gameImg,
+    details: data.gameDiscrption,
+  });
+}
 
-
-function AddGame(name,image,desc){
-  gamesData.push({id:Math.random(),name:name,poster:image,details:desc})
-
+// data is getiing removed but need to re render after clicking it that i dont know.
+export function removeGame(data) {
+  gamesData.splice(data.index, 1);
+  console.log(gamesData);
 }
 
 export default AddGame;

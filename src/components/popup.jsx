@@ -1,54 +1,59 @@
 import styles from "../styles/popup.module.css";
 import AddGame from "../helpers/data";
 
-import React,{ useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const Popup = (props) => {
-  const [gname,setGname]=useState('')
-  const [gimage,setGImage]=useState('')
-  const [gdescribtion,setGdescription]=useState('')
+  const { register, handleSubmit } = useForm();
 
-  const [gameFormValue,setGameFormValue]=useState({
-    gname:'',
-    gimage:'',
-    gdescribtion:''
-  })
-  const AddGameClickeHandler=()=>{
-    setGameFormValue({gname:gname, gimage:gimage,gdescribtion:gdescribtion})
-    AddGame(gameFormValue.gname,gameFormValue.gimage,gameFormValue.gdescribtion)
-    props.setIsOpen(false)
-    
-  }
-
-  const InputGnameHandler=(e)=>{
-    setGname(e.target.value)
-  }
-  const InputImageNameHandler=(e)=>{
-    setGImage(e.target.value)
-  }
-  const InputDescNameHandler=(e)=>{
-    setGdescription(e.target.value)
-  }
+  // props.setIsOpen(false);
 
   const { setIsOpen, isOpen } = props;
   return (
     isOpen && (
-      <div className={styles.bg}>
-        <div className={styles.modal}>
-          <h1>Add game</h1>
-          <input type="text" name="gname"  onChange={InputGnameHandler} placeholder="gane Name"/>
-          <input type='text' name="gimage" onChange={InputImageNameHandler} placeholder="Game Image"/>
-          <input type='text' name="gdescription" onChange={InputDescNameHandler}  placeholder="Game Describtion"/>
-          <button style={{ height: "2.5rem" }} onClick={() => setIsOpen(false)}>
-            Close
-          </button>
-          <button style={{ height: "2.5rem" }} onClick={AddGameClickeHandler}>Add</button>
+      <form>
+        <div className={styles.bg}>
+          <div className={styles.modal}>
+            <h1>Add game</h1>
+            <input
+              className={styles.input}
+              {...register("gameName")}
+              type="text"
+              placeholder="Game Name"
+            />
+            <input
+              className={styles.input}
+              {...register("gameImg")}
+              type="text"
+              placeholder="Game Image"
+            />
+            <input
+              className={styles.input}
+              {...register("gameDiscrption")}
+              type="text"
+              placeholder="Game Describtion"
+            />
+            <div className={styles.buttons}>
+              <button
+                className={styles.add}
+                id="submit"
+                onClick={handleSubmit((data) => {
+                  AddGame(data);
+                  setIsOpen(false);
+                })}
+              >
+                Add
+              </button>
+              <button className={styles.close} onClick={() => setIsOpen(false)}>
+                Close
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     )
   );
 };
 
-export {Popup };
-
-
+export default Popup;
