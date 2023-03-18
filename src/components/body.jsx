@@ -1,6 +1,7 @@
 import classes from "../styles/body.module.css";
 import GameCard from "./gameCard";
 import { gamesData as arrayData } from "../helpers/data";
+import Style from "../styles/popup.module.css";
 
 const Body = ({ darkMode, setIsOpen }) => {
   return (
@@ -11,7 +12,13 @@ const Body = ({ darkMode, setIsOpen }) => {
       <p style={darkMode ? { color: "white" } : { color: "black" }}>
         You can add the list of games here
       </p>
-      <button onClick={() => setIsOpen(true)}>Add a game!</button>
+      <button
+        className={Style.add}
+        style={{ width: "10rem", backgroundColor: "rgb(79, 79, 80)" }}
+        onClick={() => setIsOpen(true)}
+      >
+        Add a game!
+      </button>
       <br />
 
       <div className={classes.flexBox}>
@@ -24,7 +31,6 @@ const Body = ({ darkMode, setIsOpen }) => {
             darkMode={darkMode}
             data={data}
             index={index}
-            
           />
         ))}
       </div>
