@@ -2,14 +2,14 @@ import classes from "../styles/gameCard.module.css";
 import { removeGame } from "../helpers/data";
 
 const GameCard = (props) => {
-  const ClikeDeleteHandler = () => {
-    removeGame(props);
+  const deleteHandler = () => {
+    removeGame(props.data.id, props.gamesData, props.setGamesData);
   };
   const { name, details, poster, darkMode } = props;
   return (
     <div className={darkMode ? classes.lightContainer : classes.container}>
       <h2 style={{ margin: "1rem" }}>{name}</h2>
-      <span onClick={ClikeDeleteHandler} className={classes.detelecard}>
+      <span onClick={deleteHandler} className={classes.detelecard}>
         X
       </span>
       <hr />
