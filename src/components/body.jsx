@@ -1,9 +1,8 @@
 import classes from "../styles/body.module.css";
 import GameCard from "./gameCard";
-import { gamesData as arrayData } from "../helpers/data";
 import Style from "../styles/popup.module.css";
 
-const Body = ({ darkMode, setIsOpen }) => {
+const Body = ({ darkMode, setIsOpen, gamesData, setGamesData }) => {
   return (
     <div className={classes.container}>
       <h1 style={darkMode ? { color: "white" } : { color: "black" }}>
@@ -22,7 +21,7 @@ const Body = ({ darkMode, setIsOpen }) => {
       <br />
 
       <div className={classes.flexBox}>
-        {arrayData.map((data, index) => (
+        {gamesData.map((data, index) => (
           <GameCard
             key={index} //Unique identifier
             name={data.name}
@@ -31,6 +30,8 @@ const Body = ({ darkMode, setIsOpen }) => {
             darkMode={darkMode}
             data={data}
             index={index}
+            gamesData={gamesData}
+            setGamesData={setGamesData}
           />
         ))}
       </div>

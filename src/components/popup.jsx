@@ -17,18 +17,21 @@ const Popup = (props) => {
           <div className={styles.modal}>
             <h1>Add game</h1>
             <input
+              name="gameName"
               className={styles.input}
               {...register("gameName")}
               type="text"
               placeholder="Game Name"
             />
             <input
+              name="gameImg"
               className={styles.input}
               {...register("gameImg")}
               type="text"
               placeholder="Game Image"
             />
             <input
+              name="gameDescription"
               className={styles.input}
               {...register("gameDiscrption")}
               type="text"
@@ -39,7 +42,7 @@ const Popup = (props) => {
                 className={styles.add}
                 id="submit"
                 onClick={handleSubmit((data) => {
-                  AddGame(data);
+                  AddGame(data, props.gamesData, props.setGamesData);
                   setIsOpen(false);
                 })}
               >
